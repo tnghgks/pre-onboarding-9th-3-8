@@ -15,6 +15,7 @@ import {
 } from 'recharts';
 import { generateStartAndEndDate } from '@/lib/utils/generateDate';
 import '@/lib/utils/main.css';
+import CustomTooltip from '@/components/CustomTooltips';
 
 const Home = () => {
   const [graphData, setGraphData] = useState<IGraph[]>([]);
@@ -49,7 +50,10 @@ const Home = () => {
               domain={[0, 150]}
               label={{ value: 'value_area', position: 'top', offset: 20 }}
             />
-            <Tooltip />
+            <Tooltip
+              content={<CustomTooltip />}
+              wrapperStyle={{ outline: 'none' }}
+            />
             <Legend />
             <Bar
               yAxisId="left"
