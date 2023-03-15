@@ -1,4 +1,5 @@
 import { TooltipProps } from 'recharts';
+import styles from '@/components/Chart/CustomTooltips/style.module.css';
 
 const CustomTooltip = ({
   active,
@@ -7,7 +8,7 @@ const CustomTooltip = ({
   if (active && payload && payload.length) {
     const [bar, area] = payload;
     return (
-      <div className="tooltip">
+      <div className={styles.tooltip}>
         <p className="title">{`${bar.payload.id}`}</p>
         <div>
           <p>
