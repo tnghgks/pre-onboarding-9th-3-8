@@ -1,5 +1,4 @@
 import { TooltipProps } from 'recharts';
-import '@/lib/utils/main.css';
 
 const CustomTooltip = ({
   active,
