@@ -1,11 +1,11 @@
 import apiClient from '@/api';
-import { IGraphValue } from '@/interface/data';
+import { IData } from '@/interface/chartData';
 
 export const getData = async (url: string) => {
   try {
     const res = await apiClient(url);
     return Object.entries(res.data.response).map(([date, value]) => {
-      const data = value as IGraphValue;
+      const data = value as IData;
       return {
         date,
         id: data.id,
