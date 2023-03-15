@@ -4,7 +4,6 @@ import '@/lib/utils/main.css';
 const CustomTooltip = ({
   active,
   payload,
-  label,
 }: TooltipProps<number, string>): JSX.Element | null => {
   if (active && payload && payload.length) {
     const [bar, area] = payload;
