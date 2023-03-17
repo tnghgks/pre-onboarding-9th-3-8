@@ -12,14 +12,15 @@ import {
   Cell,
 } from 'recharts';
 import CustomTooltip from '@/components/Chart/CustomTooltips';
-import { IActivePayload, IChartProps } from '@/interface/props';
+import { IActivePayload } from '@/interface/props';
 import CustomDot from './CustomDot';
 import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
 import styles from '@/components/Chart/style.module.css';
 import useFilterParams from '@/lib/hooks/useFilterParams';
 import { getFilteredData } from '@/lib/utils/chartHelper';
+import { IChart } from '@/interface/chartData';
 
-const Chart = ({ data, start, end }: IChartProps) => {
+const Chart = ({ data }: { data: IChart[] }) => {
   const { curFilterData, toggleFilter } = useFilterParams('filter');
   const filteredData = getFilteredData(data, curFilterData);
 

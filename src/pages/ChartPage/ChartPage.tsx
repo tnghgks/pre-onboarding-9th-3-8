@@ -21,10 +21,10 @@ const ChartPage = () => {
   return (
     <div className={styles.container}>
       <section className={styles.top}>
-        <h1>Flexys Chart</h1>
+        <h1>시계열 차트</h1>
         <span>
-          <span className={styles.date}>{startDate}</span>부터{' '}
-          <span className={styles.date}>{endDate}</span>까지의 시계열
+          <span className={styles.date}> {startDate} </span>부터
+          <span className={styles.date}> {endDate} </span>까지의 시계열
           차트입니다.
         </span>
       </section>
@@ -33,7 +33,7 @@ const ChartPage = () => {
         <FilterList data={chartData} />
       </section>
       <section className={styles.chart}>
-        <Chart data={chartData} start={startDate} end={endDate} />
+        <Chart data={chartData} />
       </section>
     </div>
   );
