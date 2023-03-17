@@ -116,7 +116,7 @@
 - 툴팁 표시
 - 필터링 기능 (지역별, 다중선택)
 
-![demo](https://user-images.githubusercontent.com/17325845/225849849-52da46a7-a5d5-4bb9-b1e9-f21dfbb5fc33.gif))
+![demo](https://user-images.githubusercontent.com/17325845/225849849-52da46a7-a5d5-4bb9-b1e9-f21dfbb5fc33.gif)
 
 ## ✨ 기술 스택
 
