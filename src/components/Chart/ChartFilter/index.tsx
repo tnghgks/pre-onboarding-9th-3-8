@@ -1,7 +1,7 @@
 import { IChartFilterProps } from '@/interface/props';
 import useFilterData from '@/lib/hooks/useFilterData';
 import { uniqueId } from '@/lib/utils/uniqueId';
-import FilterBtn from '../FilterBtn/FilterBtn';
+import FilterBtn from '../FilterBtn';
 import style from './style.module.css';
 
 const ChartFilter = ({ data }: IChartFilterProps) => {

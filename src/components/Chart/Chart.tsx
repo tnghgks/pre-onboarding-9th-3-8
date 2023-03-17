@@ -10,10 +10,10 @@ import {
   ResponsiveContainer,
   ReferenceArea,
 } from 'recharts';
-import CustomTooltip from '@/components/Chart/CustomTooltips/CustomTooltips';
+import CustomTooltip from '@/components/Chart/CustomTooltips';
 import { IActivePayload, IChartProps } from '@/interface/props';
-import ChartFilter from './ChartFilter/ChartFilter';
-import CustomDot from './CustomDot/CustomDot';
+import ChartFilter from './ChartFilter';
+import CustomDot from './CustomDot';
 import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
 import style from '@/components/Chart/style.module.css';
 import useFilterData from '@/lib/hooks/useFilterData';
