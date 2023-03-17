@@ -3,7 +3,7 @@ import { API_URL } from '@/constants/url';
 import { IChart } from '@/interface/chartData';
 import useFetch from '@/lib/hooks/useFetch';
 import styles from '@/pages/ChartPage/style.module.css';
-import transformData from '@/lib/utils/transformData';
+import { transformData } from '@/lib/utils/chartHelper';
 import { generateStartAndEndDate } from '@/lib/utils/generateDate';
 
 const ChartPage = () => {

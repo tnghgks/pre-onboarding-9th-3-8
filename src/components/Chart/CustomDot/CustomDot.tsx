@@ -1,13 +1,7 @@
-import { IChart } from '@/interface/chartData';
+import { ICustomDotProps } from '@/interface/props';
 import useFilterData from '@/lib/hooks/useFilterData';
 
-interface IProps {
-  cx: number;
-  cy: number;
-  payload: IChart;
-}
-
-const CustomDot = (e: IProps | Record<string, never>) => {
+const CustomDot = (e: ICustomDotProps | Record<string, never>) => {
   const { curFilterData } = useFilterData();
 
   return (

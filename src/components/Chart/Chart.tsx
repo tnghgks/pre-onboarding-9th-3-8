@@ -8,25 +8,20 @@ import {
   Bar,
   ComposedChart,
   ResponsiveContainer,
-  Cell,
+  ReferenceArea,
 } from 'recharts';
 import CustomTooltip from '@/components/Chart/CustomTooltips/CustomTooltips';
-import { IChartProps } from '@/interface/props';
+import { IActivePayload, IChartProps } from '@/interface/props';
 import ChartFilter from './ChartFilter/ChartFilter';
 import CustomDot from './CustomDot/CustomDot';
-import { IChart } from '@/interface/chartData';
 import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
 import style from '@/components/Chart/style.module.css';
 import useFilterData from '@/lib/hooks/useFilterData';
-
-interface IActivePayload {
-  activePayload: {
-    payload: IChart;
-  }[];
-}
+import { getFilteredData } from '@/lib/utils/chartHelper';
 
 const Chart = ({ data, start, end }: IChartProps) => {
   const { curFilterData, toggleFilter } = useFilterData();
+  const filteredData = getFilteredData(data, curFilterData);
 
   const onClick = ({ activePayload }: IActivePayload) => {
     const payload = activePayload[0].payload;
@@ -68,15 +63,12 @@ const Chart = ({ data, start, end }: IChartProps) => {
               wrapperStyle={{ outline: 'none' }}
             />
             <Legend />
-            <Bar yAxisId="left" dataKey="value_bar" fill="#868e96" barSize={20}>
-              {data.map((entry, index) => (
-                <Cell
-                  cursor="pointer"
-                  fill={curFilterData.includes(entry.id) ? '#0765AB' : '#aaa'}
-                  key={`cell-${index}`}
-                />
-              ))}
-            </Bar>
+            <Bar
+              yAxisId="left"
+              dataKey="value_bar"
+              fill="#868e96"
+              barSize={20}
+            />
             <Area
               yAxisId="right"
               type="monotone"
@@ -85,7 +77,17 @@ const Chart = ({ data, start, end }: IChartProps) => {
               fill="#ffa8a8"
               isAnimationActive={false}
               dot={<CustomDot />}
-            ></Area>
+            />
+            {filteredData.map((date) => (
+              <ReferenceArea
+                key={date}
+                yAxisId="right"
+                x1={date}
+                x2={date}
+                fill="#ffa8a8"
+                fillOpacity={0.6}
+              />
+            ))}
           </ComposedChart>
         </ResponsiveContainer>
       </div>
