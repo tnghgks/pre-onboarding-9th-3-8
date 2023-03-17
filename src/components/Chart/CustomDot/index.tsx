@@ -7,7 +7,7 @@ const CustomDot = (e: ICustomDotProps | Record<string, never>) => {
   return (
     <>
       {curFilterData.includes(e.payload.id) ? (
-        <circle cx={e.cx} cy={e.cy} r={3} fill="#ff7f00" />
+        <circle cx={e.cx} cy={e.cy} r={2} fill="#277fe4" />
       ) : null}
     </>
   );

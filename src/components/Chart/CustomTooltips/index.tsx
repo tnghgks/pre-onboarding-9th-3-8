@@ -1,5 +1,6 @@
 import { TooltipProps } from 'recharts';
-import styles from '@/components/Chart/CustomTooltips/style.module.css';
+import styles from './style.module.css';
+import position from '@/assets/icons/position.svg';
 
 const CustomTooltip = ({
   active,
@@ -9,22 +10,25 @@ const CustomTooltip = ({
     const [bar, area] = payload;
     return (
       <div className={styles.tooltip}>
-        <p className="title">{`${bar.payload.id}`}</p>
+        <div className={styles.title_container}>
+          <div className={styles.img_position}>
+            <img src={position} alt="position" />
+          </div>
+          <p className={styles.title}>{`${bar.payload.id}`}</p>
+        </div>
         <div>
           <p>
             {`${bar.dataKey} : `}
-            <span className="bar_value">{`${bar.value}`}</span>
+            <span className={styles.bar_value}>{`${bar.value}`}</span>
           </p>
           <p>
             {`${area.dataKey} : `}
-            <span className="area_value">{`${area.value}`}</span>
+            <span className={styles.area_value}>{`${area.value}`}</span>
           </p>
         </div>
       </div>
     );
   }
-
   return null;
 };
-
 export default CustomTooltip;

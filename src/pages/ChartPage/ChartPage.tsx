@@ -5,6 +5,7 @@ import useFetch from '@/lib/hooks/useFetch';
 import styles from '@/pages/ChartPage/style.module.css';
 import { transformData } from '@/lib/utils/chartHelper';
 import { generateStartAndEndDate } from '@/lib/utils/generateDate';
+import FilterList from '@/components/Chart/FilterList';
 
 const ChartPage = () => {
   const [chartData, isLoading, isError] = useFetch<IChart[]>(
@@ -16,10 +17,25 @@ const ChartPage = () => {
 
   if (isLoading) return <>Loading...</>;
   if (isError) return <>Error...</>;
+
   return (
-    <main className={styles.outer}>
-      <Chart data={chartData} start={startDate} end={endDate} />
-    </main>
+    <div className={styles.container}>
+      <section className={styles.top}>
+        <h1>Flexys Chart</h1>
+        <span>
+          <span className={styles.date}>{startDate}</span>부터{' '}
+          <span className={styles.date}>{endDate}</span>까지의 시계열
+          차트입니다.
+        </span>
+      </section>
+      <section className={styles.filters}>
+        <h3>Filters</h3>
+        <FilterList data={chartData} />
+      </section>
+      <section className={styles.chart}>
+        <Chart data={chartData} start={startDate} end={endDate} />
+      </section>
+    </div>
   );
 };
 

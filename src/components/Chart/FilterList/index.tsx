@@ -2,7 +2,7 @@ import { IChartFilterProps } from '@/interface/props';
 import useFilterParams from '@/lib/hooks/useFilterParams';
 import { uniqueId } from '@/lib/utils/uniqueId';
 import FilterBtn from '../FilterBtn';
-import style from './style.module.css';
+import styles from './style.module.css';
 
 const ChartFilter = ({ data }: IChartFilterProps) => {
   const { resetFilter } = useFilterParams('filter');
@@ -14,9 +14,9 @@ const ChartFilter = ({ data }: IChartFilterProps) => {
 
   return (
     <>
-      <ul className={style.btnContainer}>
+      <ul className={styles.filter_list}>
         <li>
-          <button onClick={onClickInitFilter} className={style.initBtn}>
+          <button onClick={onClickInitFilter} className={styles.init_btn}>
             필터 삭제
           </button>
         </li>
