@@ -1,8 +1,8 @@
 import Chart from '@/components/Chart/Chart';
 import useChart from '@/lib/hooks/useChart';
-import styles from '@/pages/Home/style.module.css';
+import styles from '@/pages/ChartPage/style.module.css';
 
-const Home = () => {
+const ChartPage = () => {
   const { charts, start, end } = useChart();
 
   return (
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ChartPage;

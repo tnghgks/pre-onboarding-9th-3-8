@@ -68,7 +68,6 @@ const Chart = ({ data, start, end }: IChartProps) => {
               wrapperStyle={{ outline: 'none' }}
             />
             <Legend />
-            <CustomDot />
             <Bar yAxisId="left" dataKey="value_bar" fill="#868e96" barSize={20}>
               {data.map((entry, index) => (
                 <Cell
