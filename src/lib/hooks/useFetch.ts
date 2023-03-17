@@ -4,7 +4,7 @@ import apiClient from '@/api';
 const useFetch = <T>(
   defaultValue: T,
   url: string,
-  preProcessData: (data: T) => void,
+  preProcessData: ((data: T) => T) | null = null,
 ): [T, boolean, boolean] => {
   const [payload, setPayload] = useState(defaultValue);
   const [isLoading, setIsLoading] = useState(false);
