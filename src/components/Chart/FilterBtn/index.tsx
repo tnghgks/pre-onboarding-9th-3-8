@@ -1,9 +1,9 @@
-import useFilterData from '@/lib/hooks/useFilterData';
+import useFilterParams from '@/lib/hooks/useFilterParams';
 import { MouseEvent, useEffect, useState } from 'react';
 import style from './style.module.css';
 
 const FilterBtn = ({ name }: { name: string }) => {
-  const { curFilterData, toggleFilter } = useFilterData();
+  const { curFilterData, toggleFilter } = useFilterParams('filter');
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {

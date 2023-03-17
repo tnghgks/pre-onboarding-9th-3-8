@@ -1,8 +1,8 @@
 import { ICustomDotProps } from '@/interface/props';
-import useFilterData from '@/lib/hooks/useFilterData';
+import useFilterParams from '@/lib/hooks/useFilterParams';
 
 const CustomDot = (e: ICustomDotProps | Record<string, never>) => {
-  const { curFilterData } = useFilterData();
+  const { curFilterData } = useFilterParams('filter');
 
   return (
     <>

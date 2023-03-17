@@ -16,11 +16,11 @@ import ChartFilter from './ChartFilter';
 import CustomDot from './CustomDot';
 import { CategoricalChartFunc } from 'recharts/types/chart/generateCategoricalChart';
 import style from '@/components/Chart/style.module.css';
-import useFilterData from '@/lib/hooks/useFilterData';
+import useFilterParams from '@/lib/hooks/useFilterParams';
 import { getFilteredData } from '@/lib/utils/chartHelper';
 
 const Chart = ({ data, start, end }: IChartProps) => {
-  const { curFilterData, toggleFilter } = useFilterData();
+  const { curFilterData, toggleFilter } = useFilterParams('filter');
   const filteredData = getFilteredData(data, curFilterData);
 
   const onClick = ({ activePayload }: IActivePayload) => {

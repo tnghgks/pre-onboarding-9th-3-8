@@ -1,18 +1,22 @@
 import { useSearchParams } from 'react-router-dom';
 
-const useFilterData = () => {
+const useFilterParams = (pramsKey: string) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const curFilterData = searchParams.get('filter')?.split(',') || [];
+  const curFilterData = searchParams.get(pramsKey)?.split(',') || [];
 
   const toggleFilter = (id: string) => {
     const isExist = curFilterData.includes(id);
 
     if (isExist) {
       const removedList = curFilterData.filter((item) => item !== id);
-      setSearchParams(`filter=${encodeURIComponent(removedList.join(','))}`);
+      setSearchParams(
+        `${pramsKey}=${encodeURIComponent(removedList.join(','))}`,
+      );
     } else {
       curFilterData.push(id);
-      setSearchParams(`filter=${encodeURIComponent(curFilterData.join(','))}`);
+      setSearchParams(
+        `${pramsKey}=${encodeURIComponent(curFilterData.join(','))}`,
+      );
     }
   };
 
@@ -23,4 +27,4 @@ const useFilterData = () => {
   return { curFilterData, toggleFilter, resetFilter };
 };
 
-export default useFilterData;
+export default useFilterParams;
