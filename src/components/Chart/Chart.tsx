@@ -95,6 +95,7 @@ const Chart = ({ data }: { data: IChart[] }) => {
                 yAxisId="right"
                 x1={date}
                 x2={date}
+                ifOverflow="visible"
                 fill={`var(--highlight)`}
                 fillOpacity={0.4}
               />
