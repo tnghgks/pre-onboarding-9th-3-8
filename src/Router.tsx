@@ -1,10 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
-import Home from '@/pages/Home';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import ChartPage from '@/pages/ChartPage/ChartPage';
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/chart" element={<ChartPage />} />
+      <Route path="/*" element={<Navigate to="/chart" replace={true} />} />
     </Routes>
   );
 };
