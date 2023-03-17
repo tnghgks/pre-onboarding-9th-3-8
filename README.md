@@ -40,6 +40,7 @@
 
 ## **🐞 이슈 및 버그**
 
+- **Mar 17, 2023**  　|  [Charts 크기에 따른 하이라이트 이슈](https://github.com/Wanted-PreOnboarding-Team-8/pre-onboarding-9th-3-8/issues/26)
 - **Mar 16, 2023**  　|　[Recharts dot 렌더링 이슈 공유](https://github.com/Wanted-PreOnboarding-Team-8/pre-onboarding-9th-3-8/issues/12)
 - **Mar 15, 2023**  　|　[EDA: 목데이터 특성 파악](https://github.com/Wanted-PreOnboarding-Team-8/pre-onboarding-9th-3-8/issues/11)
 
